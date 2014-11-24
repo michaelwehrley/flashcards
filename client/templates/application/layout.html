@@ -2,11 +2,11 @@
   <div class="container-fluid">
     <header class="navbar navbar-default" role="navigation"> 
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">Microscope</a>
+        <a class="navbar-brand" href="{{pathFor 'homeIndex'}}">Flash Cards</a>
       </div>
     </header>
     <div id="main" class="row-fluid">
-      {{> layout}}
+      {{> yield}}
     </div>
   </div>
 </template>
