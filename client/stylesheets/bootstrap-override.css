@@ -1,0 +1,12 @@
+h1 {
+  margin-top: 0px;
+}
+
+.btn-toolbar, .actions {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.alert {
+  margin-bottom: 10px;
+}
