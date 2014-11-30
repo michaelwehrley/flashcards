@@ -1,0 +1,10 @@
+<template name="questionsIndex">
+  <h1>Questions</h1>
+  <div class="list-group">
+    {{#each questions}}
+      <a class="list-group-item" href="{{pathFor 'questionShow'}}">
+        {{factorA}} &times; {{factorB}} = {{product}} 
+      </a>
+    {{/each}}
+  </div>
+</template>
