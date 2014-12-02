@@ -14,4 +14,9 @@ Router.route "/questions/:_id",
   data: ->
     Questions.findOne @params._id
 
+Router.route "/questions/:_id/responses/new",
+  name: "responseNew"
+  data: ->
+    Questions.findOne @params._id
+
 Router.onBeforeAction 'dataNotFound', {only: 'homeIndex'}

@@ -1,4 +1,4 @@
-Template.homeIndex.events
+Template.responseNew.events
 
   'click button': (event) ->
     event.preventDefault()
