@@ -1,7 +1,7 @@
 # Local (client-only) collection
 @Alerts = new Meteor.Collection(null)
 
-@throwAlert = (message, alertPrefix, alertType) ->
+@throwAlert = (alertPrefix, message, alertType) ->
   $('.alert').remove()
   Alerts.insert({message: message, alertPrefix, alertType})
 

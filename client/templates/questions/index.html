@@ -2,8 +2,9 @@
   <h1>Questions</h1>
   <div class="list-group">
     {{#each questions}}
-      <a class="list-group-item" href="{{pathFor 'questionShow'}}">
-        {{factorA}} &times; {{factorB}} = {{product}} 
+      <a class="list-group-item" href="{{pathFor 'questionsShow'}}">
+        {{factorA}} &times; {{factorB}} &#61; {{product}}
+        <span class="badge">{{responseCount}}</span>
       </a>
     {{/each}}
   </div>

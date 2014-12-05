@@ -1,4 +1,6 @@
-<template name="responseNew">
+<template name="responsesNew">
+  <!-- Level 1 -->
+  {{>alerts}}
   <form class="row" role="form">
     <div class="col-xs-3">
       <button class="btn btn-default btn-lg btn-block" type="button" value="0">0</button>
@@ -7,8 +9,8 @@
       <button class="btn btn-default btn-lg btn-block" type="button" value="3">3</button>
       <button class="btn btn-default btn-lg btn-block" type="button" value="4">4</button>    
     </div>
-    <div class="col-xs-6 jumbotron text-center">
-      {{factorA}} &times; {{factorB}} = {{product}}
+    <div class="col-xs-6 jumbotron">
+      <h1 class="text-center">{{factorA}} &times; {{factorB}}</h1>
     </div>
     <div class="col-xs-3">
       <button class="btn btn-default btn-lg btn-block" type="button" value="5">5</button>
@@ -17,7 +19,5 @@
       <button class="btn btn-default btn-lg btn-block" type="button" value="8">8</button>
       <button class="btn btn-default btn-lg btn-block" type="button" value="9">9</button>  
     </div>
-    <!-- to be removed -->
-    <button class="btn btn-default" type="submit">Submit</button>
   </form>
 </template>

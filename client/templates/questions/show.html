@@ -1,6 +1,9 @@
-<template name="questionShow">
+<template name="questionsShow">
   <h1>Question</h1>
+  <div class="btn-toolbar" role="toolbar">
+    <a class="btn btn-default" href="{{pathFor 'responsesIndex'}}">Responses</a>
+  </div>
   <div class="jumbotron">
-    {{factorA}} &times; {{factorB}} = {{product}}
+    {{factorA}} &times; {{factorB}} &#61; {{product}}
   </div>
 </template>

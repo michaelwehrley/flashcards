@@ -1,0 +1,16 @@
+<template name="responsesIndex">
+  <h1>Responses</h1>
+  <div class="btn-toolbar" role="toolbar">
+    <a class="btn btn-default" href="{{pathFor 'responsesNew'}}">Practice</a>
+  </div>
+  <div class="jumbotron">
+    {{factorA}} &times; {{factorB}} &#61; {{product}}
+  </div>
+  <ul class="list-group">
+    {{#each responses}}
+      <li class="list-group-item">
+        {{userInput}}
+      </li>
+    {{/each}}
+  </ul>
+</template>

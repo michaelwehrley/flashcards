@@ -7,7 +7,9 @@ if Questions.find().count() == 0
         Questions.insert({
           factorA: a,
           factorB: b,
-          product: a * b
+          product: a * b,
+          questionResponders: [],
+          responseCount: 0
         })
       b++
     a++
