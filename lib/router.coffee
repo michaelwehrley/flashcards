@@ -4,6 +4,7 @@ Router.configure
   notFoundTemplate: 'notFound'
   waitOn: ->
     Meteor.subscribe('questions')
+    Meteor.subscribe('challenges')
 
 Router.route '/',
   name: 'homeIndex'
@@ -21,12 +22,20 @@ Router.route '/questions/:_id/responses',
   data: ->
     Questions.findOne @params._id
   waitOn: ->
-    Meteor.subscribe('questionResponses')
+    Meteor.subscribe('responses')
 
-Router.route '/questions/:_id/responses/new',
+Router.route '/challenges/:_id',
+  name: 'challengesShow'
+  data: ->
+    Challenges.findOne @params._id
+
+Router.route '/challenges/:_challengeId/questions/:_questionId/responses/new',
   name: 'responsesNew'
   data: ->
-    Questions.findOne @params._id
+    {
+      challenge: Challenges.findOne @params._challengeId
+      question: Questions.findOne @params._questionId
+    }
 
 Router.onBeforeAction 'dataNotFound',
   only: 'homeIndex'
