@@ -2,5 +2,9 @@
   <div class="page-header">
     <h1>Welcome</h1>
   </div>
-  <button class="btn btn-lg btn-info" type="submit" value="1">Begin Level 1</button>
+  <div class="list-group">
+    {{#each levels}}
+      <a class="list-group-item" data-level="{{this}}" href="#">Level {{this}}</a>
+    {{/each}}
+  </div>
 </template>

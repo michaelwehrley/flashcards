@@ -8,6 +8,9 @@ Router.configure
 
 Router.route '/',
   name: 'homeIndex'
+  waitOn: ->
+    Session.set('duration', 0)
+    Session.set('record', false)
 
 Router.route '/questions',
   name: 'questionsIndex'
@@ -32,6 +35,7 @@ Router.route '/challenges/:_id',
 Router.route '/challenges/:_challengeId/questions/:_questionId/responses/new',
   name: 'responsesNew'
   data: ->
+    Session.set('record', true)
     {
       challenge: Challenges.findOne @params._challengeId
       question: Questions.findOne @params._questionId

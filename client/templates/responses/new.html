@@ -1,5 +1,5 @@
 <template name="responsesNew">
-  <!-- Level 1 -->
+  {{totalDuration}}
   {{>alerts}}
   <form class="row" role="form">
     <div class="col-xs-3">
@@ -11,9 +11,7 @@
     </div>
     <div class="col-xs-6 jumbotron">
       <h1 class="text-center">
-        {{question.factorA}}
-        &times;
-        {{question.factorB}}
+        {{{problem}}}
       </h1>
     </div>
     <div class="col-xs-3">

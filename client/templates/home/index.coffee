@@ -1,9 +1,17 @@
+Template.homeIndex.helpers
+
+  levels: ->
+    _.range(1, 18)
+
 Template.homeIndex.events
 
-  'click button': (event) ->
-    value = event.currentTarget.value
+  'click a.list-group-item': (event) ->
+    event.preventDefault()
+    level = event
+              .currentTarget
+              .dataset["level"]
     questions = Questions
-                  .find(level: value)
+                  .find(level: level)
     shuffledQuestions = _.shuffle questions.fetch()
     shuffledQuestionIds = _.map(shuffledQuestions, (question) ->
                             question._id
@@ -12,7 +20,7 @@ Template.homeIndex.events
     challengeId = Challenges.insert({
       duration: 0
       isFinished: false
-      level: value
+      level: level
       questionIds: shuffledQuestionIds
       userId: "guest"
     })
@@ -22,4 +30,3 @@ Template.homeIndex.events
       _questionId: _.first(shuffledQuestionIds)
     })
     throwAlert "Level", 1, "info"
-    false
